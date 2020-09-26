@@ -1,0 +1,17 @@
+s = input()
+a =['']*122
+for i in s:
+    if i >= "a" and i <= "z":
+        a.insert(ord(i)-97, i)
+    elif i >= "A" and i <= "Z":
+        a.insert(ord(i) - 65 + 26, i)
+    elif i >= '1' and i <= '9':
+        if int(i) % 2 == 1:
+            a.insert(int(i)+26+26,i)
+        elif int(i) % 2 == 0:
+            a.insert(int(i)+26+26+5,i)
+result = ''
+for c in a:
+    if c != "":
+        result = result + c
+print(result)
